@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bm3pkkowuvywg"]
+
+[ext_resource type="Script" uid="uid://j7qxbjbk5cdk" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://dni4rree2prib" path="res://assets/enemy_idle.png" id="2_qi2p4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iifgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qi2p4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qi2p4")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epg4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yqyl"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1204980715 groups=["enemy"]]
+script = ExtResource("1_4gyqm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1388102397]
+sprite_frames = SubResource("SpriteFrames_iifgy")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=783294175]
+shape = SubResource("RectangleShape2D_epg4t")
+
+[node name="HitArea" type="Area2D" parent="." unique_id=992490878]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=826112818]
+shape = SubResource("RectangleShape2D_3yqyl")

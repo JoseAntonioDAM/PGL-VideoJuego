@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://8vbdgta6t018"]
+
+[ext_resource type="Script" uid="uid://bgl43sukl301s" path="res://hud.gd" id="1_37p78"]
+
+[node name="HUD" type="Control" unique_id=1796851933]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_37p78")
+
+[node name="LivesLabel" type="Label" parent="." unique_id=2122700885]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "❤️❤️❤"
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=840096049]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Puntos: 0"
