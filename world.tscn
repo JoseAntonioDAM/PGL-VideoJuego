@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c0w8tw112g17q"]
+
+[ext_resource type="Script" uid="uid://ukfa70r23hpy" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://8vbdgta6t018" path="res://hud.tscn" id="2_036b0"]
+[ext_resource type="PackedScene" uid="uid://duwe2tngv1nck" path="res://character_body_2d.tscn" id="3_dwbse"]
+[ext_resource type="PackedScene" uid="uid://bm3pkkowuvywg" path="res://enemy.tscn" id="4_pkg7o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
+size = Vector2(2000, 50)
+
+[node name="World" type="Node2D" unique_id=322428863]
+script = ExtResource("1_aqk2v")
+
+[node name="HUD" parent="." unique_id=1796851933 instance=ExtResource("2_036b0")]
+offset_left = 444.0
+offset_top = -144.0
+offset_right = 444.0
+offset_bottom = -144.0
+
+[node name="Player" parent="." unique_id=1361601469 instance=ExtResource("3_dwbse")]
+
+[node name="Suelo" type="StaticBody2D" parent="." unique_id=251688633]
+position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo" unique_id=755245298]
+shape = SubResource("RectangleShape2D_aqk2v")
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1038190933]
+
+[node name="Enemy" parent="." unique_id=1204980715 instance=ExtResource("4_pkg7o")]
+position = Vector2(166, -26)

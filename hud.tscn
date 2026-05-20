@@ -19,6 +19,7 @@ text = "❤️❤️❤"
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=840096049]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = 22.0
+offset_right = 72.0
+offset_bottom = 45.0
 text = "Puntos: 0"

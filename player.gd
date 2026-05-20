@@ -9,7 +9,7 @@ var invincible = false
 var invincible_timer = 0.0
 const INVINCIBLE_TIME = 1.5
 
-@onready var bullet_scene = preload("res://scenes/Bullet.tscn")
+@onready var bullet_scene = preload("res://bullet.tscn")
 @onready var shoot_point = $ShootPoint
 @onready var sprite = $AnimatedSprite2D
 
@@ -38,13 +38,15 @@ func _physics_process(delta):
 		if invincible_timer <= 0:
 			invincible = false
 			sprite.modulate.a = 1.0
-
+			
+			
 func _input(event):
-	if event.is_action_just_pressed("shoot"):
-		shoot()
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			shoot()
 
 func shoot():
-	if not ResourceLoader.exists("res://scenes/Bullet.tscn"):
+	if not ResourceLoader.exists("res://bullet.tscn"):
 		return
 	var bullet = bullet_scene.instantiate()
 	bullet.direction = Vector2(1 if not sprite.flip_h else -1, 0)

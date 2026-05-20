@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bvd83kdxrbjto"]
+
+[ext_resource type="Script" uid="uid://ykabv2fg6we3" path="res://game_over.gd" id="1_y26ei"]
+
+[node name="GameOver" type="Control" unique_id=148884151]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y26ei")
+
+[node name="Label" type="Label" parent="." unique_id=2062541880]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "GAME OVER ! ! !"
+
+[node name="MenuButton" type="Button" parent="." unique_id=1537968651]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Menú "
+
+[node name="RetryButton" type="Button" parent="." unique_id=847546]
+layout_mode = 0
+offset_right = 110.0
+offset_bottom = 31.0
+text = "REINTENTAR "
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

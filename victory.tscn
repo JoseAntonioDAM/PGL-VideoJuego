@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b3arvrfsc06bv"]
+
+[ext_resource type="Script" uid="uid://botcx3hmy8v74" path="res://victory.gd" id="1_7bnjr"]
+
+[node name="Victory" type="Control" unique_id=328271288]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7bnjr")
+
+[node name="Label" type="Label" parent="." unique_id=503591754]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "¡Ganaste 10 puntos !"
+
+[node name="RetryButton" type="Button" parent="." unique_id=647991366]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "\"Jugar de nuevo \""
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

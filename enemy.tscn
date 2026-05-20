@@ -40,3 +40,5 @@ shape = SubResource("RectangleShape2D_epg4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=826112818]
 shape = SubResource("RectangleShape2D_3yqyl")
+
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://byrf77fmx1tqs"]
+
+[ext_resource type="Script" uid="uid://bdxsyu4qom04m" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=1762489110]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06t4h")
+
+[node name="Label" type="Label" parent="." unique_id=476505921]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "\"Heroe del caos\" "
+
+[node name="PlayButton" type="Button" parent="." unique_id=423078563]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "\"Jugar\""
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
